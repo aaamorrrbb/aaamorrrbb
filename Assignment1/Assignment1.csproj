@@ -52,9 +52,35 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="models\AnimalsCom\Animal.cs" />
+    <Compile Include="models\AnimalsCom\AnimalManager.cs" />
+    <Compile Include="models\AnimalSpecies.cs" />
+    <Compile Include="models\AnimalsCom\Category.cs" />
+    <Compile Include="models\Birds\Bird.cs" />
+    <Compile Include="models\Birds\BirdFactory.cs" />
+    <Compile Include="models\Birds\BirdSpecies.cs" />
+    <Compile Include="models\Birds\Falcon.cs" />
+    <Compile Include="models\Birds\Pingoen.cs" />
+    <Compile Include="models\ColorsEnum.cs" />
+    <Compile Include="models\Fish.cs" />
+    <Compile Include="models\AnimalsCom\Gender.cs" />
+    <Compile Include="models\Insect.cs" />
+    <Compile Include="models\Mammals\Cat.cs" />
+    <Compile Include="models\Mammals\Dog.cs" />
+    <Compile Include="models\Mammals\Mammal.cs" />
+    <Compile Include="models\Mammals\MammalFactory.cs" />
+    <Compile Include="models\Mammals\MammalSpecies.cs" />
+    <Compile Include="models\Reptiles\Reptile.cs" />
+    <Compile Include="models\Reptiles\ReptileSpecies.cs" />
+    <Compile Include="models\Reptiles\Snake.cs" />
+    <Compile Include="models\Reptiles\Turtle.cs" />
+    <Compile Include="models\Species.cs" />
     <Compile Include="PartyManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -77,5 +103,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

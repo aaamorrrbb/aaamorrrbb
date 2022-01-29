@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assignment1.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,7 @@ namespace Assignment1
         {
             //input controls
             ClearTextBoxes();
+            lbGender.Items.AddRange(typeof(GenderEnum).GetEnumNames());
             gbInviteGuest.Enabled = false;
             btnDelete.Enabled = false;
 
@@ -33,11 +35,11 @@ namespace Assignment1
 
         private void ClearTextBoxes()
         {
-            tbCostPerPerson.Clear();
-            tbFeePerPerson.Clear();
+            textbAge.Clear();
+
             tbFirstName.Clear();
             tbLastName.Clear();
-            tbMaxNumOfGuests.Clear();
+            textbName.Clear();
             lblNumberOfGuests.Text = "0";
             lblSurplus.Text = "0.00";
             lblTotalCosts.Text = "0.00";
@@ -55,9 +57,9 @@ namespace Assignment1
 
         private bool AreInputsValid()
         {
-            if (double.TryParse(tbCostPerPerson.Text, out _) &&
-               double.TryParse(tbFeePerPerson.Text, out _) &&
-               int.TryParse(tbMaxNumOfGuests.Text, out _))
+            if (double.TryParse(textbAge.Text, out _) &&
+
+               int.TryParse(textbName.Text, out _))
                 return true;
             else
             {
@@ -68,20 +70,19 @@ namespace Assignment1
 
         private void tbMaxNumOfGuests_Validating(object sender, CancelEventArgs e)
         {
-            if (!int.TryParse(tbMaxNumOfGuests.Text, out _))
+            if (!int.TryParse(textbName.Text, out _))
                 MessageBox.Show("This should be a number!");
         }
 
         private void tbCostPerPerson_Validating(object sender, CancelEventArgs e)
         {
-            if (!double.TryParse(tbCostPerPerson.Text, out _))
+            if (!double.TryParse(textbAge.Text, out _))
                 MessageBox.Show("This should be a number!");
         }
 
         private void tbFeePerPerson_Validating(object sender, CancelEventArgs e)
         {
-            if (!double.TryParse(tbFeePerPerson.Text, out _))
-                MessageBox.Show("This should be a number!");
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -123,11 +124,11 @@ namespace Assignment1
             lstAllGuests.Items.Clear();
             if (AreInputsValid())
             {
-                int maxNumberOfGuests = int.Parse(tbMaxNumOfGuests.Text);
+                int maxNumberOfGuests = int.Parse(textbName.Text);
                 partyManager = new PartyManager(maxNumberOfGuests);
 
-                partyManager.CostPerPerson = double.Parse(tbCostPerPerson.Text);
-                partyManager.FeePerPerson = double.Parse(tbFeePerPerson.Text);
+                partyManager.CostPerPerson = double.Parse(textbAge.Text);
+                partyManager.FeePerPerson = double.Parse("02");
                 gbInviteGuest.Enabled = true;
 
                 tbFirstName.Clear();
