@@ -4,6 +4,5 @@
     {
         Dove,
         Eagle,
-        Pelican
     }
 }

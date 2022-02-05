@@ -37,11 +37,11 @@
             this.lblSpeciesSpec = new System.Windows.Forms.Label();
             this.tbSpeciesSpec = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.gbMamalSpec = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbNumofTeeth = new System.Windows.Forms.TextBox();
-            this.tbLengthOfTail = new System.Windows.Forms.TextBox();
+            this.gbAnimalCatSpec = new System.Windows.Forms.GroupBox();
+            this.lblAnimalSpec2 = new System.Windows.Forms.Label();
+            this.lblAnimalSpec = new System.Windows.Forms.Label();
+            this.tbAnimalSpec1 = new System.Windows.Forms.TextBox();
+            this.tbAnimalSpec2 = new System.Windows.Forms.TextBox();
             this.listCategoryType = new System.Windows.Forms.ListBox();
             this.gbGenderType = new System.Windows.Forms.GroupBox();
             this.lbGender = new System.Windows.Forms.ListBox();
@@ -52,10 +52,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listAddAnimal = new System.Windows.Forms.ListBox();
+            this.rtbAddAnimal = new System.Windows.Forms.RichTextBox();
             this.gbAnimalSpec.SuspendLayout();
             this.gbSpeciesSpec.SuspendLayout();
-            this.gbMamalSpec.SuspendLayout();
+            this.gbAnimalCatSpec.SuspendLayout();
             this.gbGenderType.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +68,7 @@
             this.gbAnimalSpec.Controls.Add(this.listSpecies);
             this.gbAnimalSpec.Controls.Add(this.gbSpeciesSpec);
             this.gbAnimalSpec.Controls.Add(this.label9);
-            this.gbAnimalSpec.Controls.Add(this.gbMamalSpec);
+            this.gbAnimalSpec.Controls.Add(this.gbAnimalCatSpec);
             this.gbAnimalSpec.Controls.Add(this.listCategoryType);
             this.gbAnimalSpec.Controls.Add(this.gbGenderType);
             this.gbAnimalSpec.Controls.Add(this.tbName);
@@ -78,7 +78,7 @@
             this.gbAnimalSpec.ForeColor = System.Drawing.Color.Green;
             this.gbAnimalSpec.Location = new System.Drawing.Point(29, 10);
             this.gbAnimalSpec.Name = "gbAnimalSpec";
-            this.gbAnimalSpec.Size = new System.Drawing.Size(1246, 343);
+            this.gbAnimalSpec.Size = new System.Drawing.Size(827, 343);
             this.gbAnimalSpec.TabIndex = 0;
             this.gbAnimalSpec.TabStop = false;
             this.gbAnimalSpec.Text = "Animal Specifications";
@@ -92,6 +92,7 @@
             this.btnAddAnimal.TabIndex = 23;
             this.btnAddAnimal.Text = "Add this animal";
             this.btnAddAnimal.UseVisualStyleBackColor = true;
+            this.btnAddAnimal.Click += new System.EventHandler(this.btnAddAnimal_Click);
             // 
             // checkBox1
             // 
@@ -99,9 +100,9 @@
             this.checkBox1.ForeColor = System.Drawing.Color.Black;
             this.checkBox1.Location = new System.Drawing.Point(451, 215);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(100, 17);
+            this.checkBox1.Size = new System.Drawing.Size(94, 17);
             this.checkBox1.TabIndex = 22;
-            this.checkBox1.Text = "List aall species";
+            this.checkBox1.Text = "List all species";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label10
@@ -132,7 +133,6 @@
             this.gbSpeciesSpec.Size = new System.Drawing.Size(172, 97);
             this.gbSpeciesSpec.TabIndex = 19;
             this.gbSpeciesSpec.TabStop = false;
-            this.gbSpeciesSpec.Text = "SpeciesSpec title";
             // 
             // lblSpeciesSpec
             // 
@@ -140,15 +140,14 @@
             this.lblSpeciesSpec.ForeColor = System.Drawing.Color.Black;
             this.lblSpeciesSpec.Location = new System.Drawing.Point(10, 26);
             this.lblSpeciesSpec.Name = "lblSpeciesSpec";
-            this.lblSpeciesSpec.Size = new System.Drawing.Size(60, 13);
+            this.lblSpeciesSpec.Size = new System.Drawing.Size(0, 13);
             this.lblSpeciesSpec.TabIndex = 15;
-            this.lblSpeciesSpec.Text = "SpecName";
             // 
             // tbSpeciesSpec
             // 
-            this.tbSpeciesSpec.Location = new System.Drawing.Point(70, 26);
+            this.tbSpeciesSpec.Location = new System.Drawing.Point(99, 26);
             this.tbSpeciesSpec.Name = "tbSpeciesSpec";
-            this.tbSpeciesSpec.Size = new System.Drawing.Size(96, 20);
+            this.tbSpeciesSpec.Size = new System.Drawing.Size(67, 20);
             this.tbSpeciesSpec.TabIndex = 3;
             // 
             // label9
@@ -161,53 +160,50 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Category Type";
             // 
-            // gbMamalSpec
+            // gbAnimalCatSpec
             // 
-            this.gbMamalSpec.Controls.Add(this.label8);
-            this.gbMamalSpec.Controls.Add(this.label7);
-            this.gbMamalSpec.Controls.Add(this.tbNumofTeeth);
-            this.gbMamalSpec.Controls.Add(this.tbLengthOfTail);
-            this.gbMamalSpec.Location = new System.Drawing.Point(8, 205);
-            this.gbMamalSpec.Name = "gbMamalSpec";
-            this.gbMamalSpec.Size = new System.Drawing.Size(172, 97);
-            this.gbMamalSpec.TabIndex = 17;
-            this.gbMamalSpec.TabStop = false;
-            this.gbMamalSpec.Text = " Mammal Specifications";
+            this.gbAnimalCatSpec.Controls.Add(this.lblAnimalSpec2);
+            this.gbAnimalCatSpec.Controls.Add(this.lblAnimalSpec);
+            this.gbAnimalCatSpec.Controls.Add(this.tbAnimalSpec1);
+            this.gbAnimalCatSpec.Controls.Add(this.tbAnimalSpec2);
+            this.gbAnimalCatSpec.Location = new System.Drawing.Point(8, 205);
+            this.gbAnimalCatSpec.Name = "gbAnimalCatSpec";
+            this.gbAnimalCatSpec.Size = new System.Drawing.Size(172, 97);
+            this.gbAnimalCatSpec.TabIndex = 17;
+            this.gbAnimalCatSpec.TabStop = false;
             // 
-            // label8
+            // lblAnimalSpec2
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(10, 48);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Length of tail";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblAnimalSpec2.AutoSize = true;
+            this.lblAnimalSpec2.ForeColor = System.Drawing.Color.Black;
+            this.lblAnimalSpec2.Location = new System.Drawing.Point(10, 48);
+            this.lblAnimalSpec2.Name = "lblAnimalSpec2";
+            this.lblAnimalSpec2.Size = new System.Drawing.Size(0, 13);
+            this.lblAnimalSpec2.TabIndex = 16;
+            this.lblAnimalSpec2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label7
+            // lblAnimalSpec
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(10, 26);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Number of teeth";
+            this.lblAnimalSpec.AutoSize = true;
+            this.lblAnimalSpec.ForeColor = System.Drawing.Color.Black;
+            this.lblAnimalSpec.Location = new System.Drawing.Point(10, 26);
+            this.lblAnimalSpec.Name = "lblAnimalSpec";
+            this.lblAnimalSpec.Size = new System.Drawing.Size(0, 13);
+            this.lblAnimalSpec.TabIndex = 15;
             // 
-            // tbNumofTeeth
+            // tbAnimalSpec1
             // 
-            this.tbNumofTeeth.Location = new System.Drawing.Point(137, 19);
-            this.tbNumofTeeth.Name = "tbNumofTeeth";
-            this.tbNumofTeeth.Size = new System.Drawing.Size(35, 20);
-            this.tbNumofTeeth.TabIndex = 3;
+            this.tbAnimalSpec1.Location = new System.Drawing.Point(137, 19);
+            this.tbAnimalSpec1.Name = "tbAnimalSpec1";
+            this.tbAnimalSpec1.Size = new System.Drawing.Size(35, 20);
+            this.tbAnimalSpec1.TabIndex = 3;
             // 
-            // tbLengthOfTail
+            // tbAnimalSpec2
             // 
-            this.tbLengthOfTail.Location = new System.Drawing.Point(137, 45);
-            this.tbLengthOfTail.Name = "tbLengthOfTail";
-            this.tbLengthOfTail.Size = new System.Drawing.Size(35, 20);
-            this.tbLengthOfTail.TabIndex = 2;
+            this.tbAnimalSpec2.Location = new System.Drawing.Point(137, 45);
+            this.tbAnimalSpec2.Name = "tbAnimalSpec2";
+            this.tbAnimalSpec2.Size = new System.Drawing.Size(35, 20);
+            this.tbAnimalSpec2.TabIndex = 2;
             // 
             // listCategoryType
             // 
@@ -274,12 +270,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.rtbAddAnimal);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.listBox1);
-            this.groupBox2.Controls.Add(this.listAddAnimal);
             this.groupBox2.Location = new System.Drawing.Point(29, 359);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1246, 228);
+            this.groupBox2.Size = new System.Drawing.Size(828, 228);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "List of registered animals";
@@ -289,7 +285,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(220, 16);
+            this.label1.Location = new System.Drawing.Point(336, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(299, 13);
             this.label1.TabIndex = 23;
@@ -298,26 +294,26 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(195, 37);
+            this.listBox1.Location = new System.Drawing.Point(311, 37);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(671, 173);
+            this.listBox1.Size = new System.Drawing.Size(500, 173);
             this.listBox1.TabIndex = 22;
             // 
-            // listAddAnimal
+            // rtbAddAnimal
             // 
-            this.listAddAnimal.BackColor = System.Drawing.SystemColors.Control;
-            this.listAddAnimal.Enabled = false;
-            this.listAddAnimal.FormattingEnabled = true;
-            this.listAddAnimal.Location = new System.Drawing.Point(6, 37);
-            this.listAddAnimal.Name = "listAddAnimal";
-            this.listAddAnimal.Size = new System.Drawing.Size(172, 173);
-            this.listAddAnimal.TabIndex = 21;
+            this.rtbAddAnimal.BackColor = System.Drawing.SystemColors.Control;
+            this.rtbAddAnimal.Enabled = false;
+            this.rtbAddAnimal.Location = new System.Drawing.Point(8, 37);
+            this.rtbAddAnimal.Name = "rtbAddAnimal";
+            this.rtbAddAnimal.Size = new System.Drawing.Size(284, 173);
+            this.rtbAddAnimal.TabIndex = 24;
+            this.rtbAddAnimal.Text = "";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1286, 598);
+            this.ClientSize = new System.Drawing.Size(868, 598);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbAnimalSpec);
             this.MaximizeBox = false;
@@ -328,8 +324,8 @@
             this.gbAnimalSpec.PerformLayout();
             this.gbSpeciesSpec.ResumeLayout(false);
             this.gbSpeciesSpec.PerformLayout();
-            this.gbMamalSpec.ResumeLayout(false);
-            this.gbMamalSpec.PerformLayout();
+            this.gbAnimalCatSpec.ResumeLayout(false);
+            this.gbAnimalCatSpec.PerformLayout();
             this.gbGenderType.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -354,16 +350,16 @@
         private System.Windows.Forms.Label lblSpeciesSpec;
         private System.Windows.Forms.TextBox tbSpeciesSpec;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox gbMamalSpec;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbNumofTeeth;
-        private System.Windows.Forms.TextBox tbLengthOfTail;
+        private System.Windows.Forms.GroupBox gbAnimalCatSpec;
+        private System.Windows.Forms.Label lblAnimalSpec2;
+        private System.Windows.Forms.Label lblAnimalSpec;
+        private System.Windows.Forms.TextBox tbAnimalSpec1;
+        private System.Windows.Forms.TextBox tbAnimalSpec2;
         private System.Windows.Forms.ListBox listCategoryType;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listAddAnimal;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox rtbAddAnimal;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

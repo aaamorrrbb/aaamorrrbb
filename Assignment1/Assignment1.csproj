@@ -80,7 +80,6 @@
     <Compile Include="Reptiles\ReptileSpecies.cs" />
     <Compile Include="Reptiles\Snake.cs" />
     <Compile Include="Reptiles\Frog.cs" />
-    <Compile Include="Species.cs" />
     <Compile Include="PartyManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

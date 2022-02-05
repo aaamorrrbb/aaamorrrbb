@@ -1,4 +1,6 @@
-﻿namespace Assignment1.Mammals
+﻿using System;
+
+namespace Assignment1.Mammals
 {
     internal class Mammal: Animal
     {
