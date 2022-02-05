@@ -1,4 +1,7 @@
-﻿using Assignment1.models;
+﻿using Assignment1.Birds;
+using Assignment1.models;
+using Assignment1.models.AnimalsCom;
+using Assignment1.models.Mammals;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +18,7 @@ namespace Assignment1
 {
     public partial class MainForm : Form
     {
-        PartyManager partyManager = new PartyManager(0);
+        AnimalManager animalManager = new AnimalManager();
 
         public MainForm()
         {
@@ -28,38 +31,40 @@ namespace Assignment1
             //input controls
             ClearTextBoxes();
             lbGender.Items.AddRange(typeof(GenderEnum).GetEnumNames());
-            gbInviteGuest.Enabled = false;
-            btnDelete.Enabled = false;
-
+            listCategoryType.Items.Add(typeof(CategoryEnum).GetEnumNames());
         }
 
         private void ClearTextBoxes()
         {
-            textbAge.Clear();
+            tbAge.Clear();
+            tbName.Clear();
+            tbSpeciesSpec.Clear();
+            tbNumofTeeth.Clear();
+            tbLengthOfTail.Clear();
+            
+            listSpecies.Items.Clear();
 
-            tbFirstName.Clear();
-            tbLastName.Clear();
-            textbName.Clear();
-            lblNumberOfGuests.Text = "0";
-            lblSurplus.Text = "0.00";
-            lblTotalCosts.Text = "0.00";
-            lblTotalFees.Text = "0.00";
         }
 
-        private void ReadInputs()
+/*        private void ReadInputs()
         {
             lstAllGuests.Items.Add(string.Format("{0}  {1}", partyManager.Count, partyManager.GetItemAt(partyManager.Count - 1)));
             lblNumberOfGuests.Text = partyManager.Count.ToString();
             lblTotalCosts.Text = partyManager.CalcTotalCost().ToString();
             lblTotalFees.Text = partyManager.CalcTotalFees().ToString();
             lblSurplus.Text = (partyManager.CalcTotalFees() - partyManager.CalcTotalCost()).ToString();
+        }*/
+
+        private void ReadInputs()
+        {
+
         }
 
         private bool AreInputsValid()
         {
-            if (double.TryParse(textbAge.Text, out _) &&
+            if (double.TryParse(tbAge.Text, out _) &&
 
-               int.TryParse(textbName.Text, out _))
+               int.TryParse(tbName.Text, out _))
                 return true;
             else
             {
@@ -70,13 +75,13 @@ namespace Assignment1
 
         private void tbMaxNumOfGuests_Validating(object sender, CancelEventArgs e)
         {
-            if (!int.TryParse(textbName.Text, out _))
+            if (!int.TryParse(tbName.Text, out _))
                 MessageBox.Show("This should be a number!");
         }
 
         private void tbCostPerPerson_Validating(object sender, CancelEventArgs e)
         {
-            if (!double.TryParse(textbAge.Text, out _))
+            if (!double.TryParse(tbAge.Text, out _))
                 MessageBox.Show("This should be a number!");
         }
 
@@ -124,10 +129,10 @@ namespace Assignment1
             lstAllGuests.Items.Clear();
             if (AreInputsValid())
             {
-                int maxNumberOfGuests = int.Parse(textbName.Text);
+                int maxNumberOfGuests = int.Parse(tbName.Text);
                 partyManager = new PartyManager(maxNumberOfGuests);
 
-                partyManager.CostPerPerson = double.Parse(textbAge.Text);
+                partyManager.CostPerPerson = double.Parse(tbAge.Text);
                 partyManager.FeePerPerson = double.Parse("02");
                 gbInviteGuest.Enabled = true;
 
@@ -173,6 +178,64 @@ namespace Assignment1
             if (partyManager.Count > 0)
                 btnDelete.Enabled = true;
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listCategoryType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch(listCategoryType.SelectedItem.ToString())
+            {
+                case "Mammal": 
+                    listSpecies.Items.AddRange(typeof(MammalSpecies).GetEnumNames());
+                    break;
+                case "Bird": 
+                    listSpecies.Items.AddRange(typeof(BirdSpecies).GetEnumNames());
+                    break;
+            }
+                 
+        }
+
+        private void listSpecies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangeSpeciesSpecGb(listSpecies.SelectedItem.ToString());
+        }
+
+        private void ChangeSpeciesSpecGb(string selectedItem)
+        {
+            switch(selectedItem)
+            {
+                case "Dog":
+                    lblSpeciesSpec.Text = "Breed";
+                    gbSpeciesSpec.Text = "Dog Specifications";
+                    break;
+                case "Wolf":
+                    lblSpeciesSpec.Text = "Hair Type";
+                    gbSpeciesSpec.Text = "Wolf Specifications";
+                    break;
+                case ""
+            }
+        }
+
+        /*        private void btnAddAnimal_Click(object sender, EventArgs e)
+                {
+                    switch(listSpecies.SelectedItem.ToString())
+                    {
+                        case "Bird":  animalManager.AddBird(var b = new Bird(); 
+                    }
+                    animalManager.AddAnimal(
+                        new Bird
+                        {
+                            Name = tbName.Text,
+                            Age = int.Parse(tbAge.Text),
+                            Gender = (GenderEnum)lbGender.SelectedItem,
+                            Category = (CategoryEnum)listCategoryType.SelectedItem,
+
+                        }
+                        ) ;
+                }*/
     }
 
 

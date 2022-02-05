@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment1.models
+namespace Assignment1.Insects
 {
-    public enum Category
+    internal class Bee:Insect
     {
-        Bird,
-        Insect,
-        Mammal,
-        Reptile
     }
 }

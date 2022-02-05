@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment1.models.Mammals
+namespace Assignment1.Reptiles
 {
-    enum MammalSpecies
+    internal class Reptile: Animal
     {
-        Cat,
-        Dog,
-        Lion,
-        Bear
+
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment1.models.Reptiles
+namespace Assignment1.Fishs
 {
-    internal class Snake
+    internal class Fish
     {
     }
 }

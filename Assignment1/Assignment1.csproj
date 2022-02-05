@@ -46,35 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Birds\Eagle.cs" />
+    <Compile Include="Fishs\Fish.cs" />
+    <Compile Include="Fishs\FishSpecies.cs" />
+    <Compile Include="Fishs\GoldFish.cs" />
+    <Compile Include="Fishs\Shark.cs" />
+    <Compile Include="Insects\Ant.cs" />
+    <Compile Include="Insects\Bee.cs" />
+    <Compile Include="Insects\Butterfly.cs" />
+    <Compile Include="Insects\Insect.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="models\AnimalsCom\Animal.cs" />
-    <Compile Include="models\AnimalsCom\AnimalManager.cs" />
-    <Compile Include="models\AnimalSpecies.cs" />
-    <Compile Include="models\AnimalsCom\Category.cs" />
-    <Compile Include="models\Birds\Bird.cs" />
-    <Compile Include="models\Birds\BirdFactory.cs" />
-    <Compile Include="models\Birds\BirdSpecies.cs" />
-    <Compile Include="models\Birds\Falcon.cs" />
-    <Compile Include="models\Birds\Pingoen.cs" />
-    <Compile Include="models\ColorsEnum.cs" />
-    <Compile Include="models\Fish.cs" />
-    <Compile Include="models\AnimalsCom\Gender.cs" />
-    <Compile Include="models\Insect.cs" />
-    <Compile Include="models\Mammals\Cat.cs" />
-    <Compile Include="models\Mammals\Dog.cs" />
-    <Compile Include="models\Mammals\Mammal.cs" />
-    <Compile Include="models\Mammals\MammalFactory.cs" />
-    <Compile Include="models\Mammals\MammalSpecies.cs" />
-    <Compile Include="models\Reptiles\Reptile.cs" />
-    <Compile Include="models\Reptiles\ReptileSpecies.cs" />
-    <Compile Include="models\Reptiles\Snake.cs" />
-    <Compile Include="models\Reptiles\Turtle.cs" />
-    <Compile Include="models\Species.cs" />
+    <Compile Include="AnimalsCom\Animal.cs" />
+    <Compile Include="AnimalsCom\AnimalManager.cs" />
+    <Compile Include="AnimalsCom\Category.cs" />
+    <Compile Include="Birds\Bird.cs" />
+    <Compile Include="Birds\BirdFactory.cs" />
+    <Compile Include="Birds\BirdSpecies.cs" />
+    <Compile Include="Birds\Dove.cs" />
+    <Compile Include="AnimalsCom\Gender.cs" />
+    <Compile Include="Mammals\ColorsEnum.cs" />
+    <Compile Include="Mammals\Wolf.cs" />
+    <Compile Include="Mammals\Dog.cs" />
+    <Compile Include="Mammals\Mammal.cs" />
+    <Compile Include="Mammals\MammalFactory.cs" />
+    <Compile Include="Mammals\MammalSpecies.cs" />
+    <Compile Include="Reptiles\Lizard.cs" />
+    <Compile Include="Reptiles\Reptile.cs" />
+    <Compile Include="Reptiles\ReptileSpecies.cs" />
+    <Compile Include="Reptiles\Snake.cs" />
+    <Compile Include="Reptiles\Frog.cs" />
+    <Compile Include="Species.cs" />
     <Compile Include="PartyManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

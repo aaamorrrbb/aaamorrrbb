@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment1.models.Birds
+namespace Assignment1.Insects
 {
-    internal class BirdSpecies
+    internal class Ant:Insect
     {
     }
 }

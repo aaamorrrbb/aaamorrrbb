@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment1.models.AnimalsCom
+namespace Assignment1.Reptiles
 {
-    internal class AnimalManager
+    internal class Snake:Reptile
     {
     }
 }

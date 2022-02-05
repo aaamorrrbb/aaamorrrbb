@@ -1,4 +1,4 @@
-﻿namespace Assignment1.models
+﻿namespace Assignment1
 {
     public enum GenderEnum
     {

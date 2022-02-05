@@ -4,9 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment1.models.Reptiles
+namespace Assignment1
 {
-    internal class Reptile
+    public enum CategoryEnum
     {
+        Bird,
+      //  Insect,
+        Mammal,
+      //  Reptile,
+      //  Fish
     }
 }
