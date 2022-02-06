@@ -9,12 +9,13 @@
 
         public Bird(double flyingSpeed, double lengthOfWings)
         {
-            id = "B001";
+            Id = "B001";
             this.flyingSpeed = flyingSpeed;
             this.lengthOfWings = lengthOfWings;
         }
 
-        public Bird CreateBird(BirdSpecies birdSpecies, double flyingSpeed, double lengthOfWings)
+        //Will be developed in the next version         
+/*        public Bird CreateBird(BirdSpecies birdSpecies, double flyingSpeed, double lengthOfWings)
         {
             Animal bird = null;
             switch(birdSpecies)
@@ -28,7 +29,7 @@
             }
 
             return (Bird)bird;
-        }
+        }*/
 
         public override string ToString()
         {

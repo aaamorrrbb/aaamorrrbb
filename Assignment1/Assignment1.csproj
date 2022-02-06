@@ -69,7 +69,7 @@
     <Compile Include="Birds\BirdSpecies.cs" />
     <Compile Include="Birds\Dove.cs" />
     <Compile Include="AnimalsCom\Gender.cs" />
-    <Compile Include="Mammals\ColorsEnum.cs" />
+    <Compile Include="AnimalsCom\ColorsEnum.cs" />
     <Compile Include="Mammals\Wolf.cs" />
     <Compile Include="Mammals\Dog.cs" />
     <Compile Include="Mammals\Mammal.cs" />
@@ -80,7 +80,6 @@
     <Compile Include="Reptiles\ReptileSpecies.cs" />
     <Compile Include="Reptiles\Snake.cs" />
     <Compile Include="Reptiles\Frog.cs" />
-    <Compile Include="PartyManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">

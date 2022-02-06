@@ -1,10 +1,10 @@
-﻿namespace Assignment1.models.Mammals
+﻿namespace Assignment1.Mammals
 {
     enum MammalSpecies
     {
         Wolf,
         Dog,
-        Deer,
-        Killer_Whales
+       // Deer,
+       // Killer_Whales
     }
 }

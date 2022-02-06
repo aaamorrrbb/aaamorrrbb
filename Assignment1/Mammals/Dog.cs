@@ -1,6 +1,4 @@
-﻿using Assignment1.models.Mammals;
-
-namespace Assignment1.Mammals
+﻿namespace Assignment1.Mammals
 {
     internal class Dog: Mammal
     {
@@ -9,6 +7,10 @@ namespace Assignment1.Mammals
         public Dog(string breed)
         {
             Breed = breed;
+        }
+
+        public Dog(int numOfTeeth, double tailLength) : base(numOfTeeth, tailLength)
+        {
         }
 
         public override string ToString()

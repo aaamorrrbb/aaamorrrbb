@@ -1,23 +1,19 @@
-﻿using System;
-
-namespace Assignment1.Mammals
+﻿namespace Assignment1.Mammals
 {
     internal class Mammal: Animal
     {
         public int numOfTeeth { get; set; }
         public double tailLength { get; set; }
-        public ColorsEnum colorOfHair { get; set; }
 
         public Mammal()
         {
         }
 
-        public Mammal(int numOfTeeth, double tailLength, ColorsEnum color)
+        public Mammal(int numOfTeeth, double tailLength)//, ColorsEnum color)
         {
-            id = "M001";
+            Id = "M001";
             this.numOfTeeth = numOfTeeth;
             this.tailLength = tailLength;
-            this.colorOfHair = color;
         }
 
         public override string ToString()

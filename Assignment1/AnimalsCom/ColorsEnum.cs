@@ -1,6 +1,6 @@
-﻿namespace Assignment1.Mammals
+﻿namespace Assignment1.AnimalsCom
 {
-    enum ColorsEnum
+    public enum ColorsEnum
     {
         White,
         Gray,
