@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Assignment1.models.AnimalsCom
 {
     internal class AnimalManager
     {
         private List<Animal> animalList;
-        /*        private int mammalId = 100;
-                private int birdId = 100;*/
 
         public AnimalManager() => animalList = new List<Animal>();
 

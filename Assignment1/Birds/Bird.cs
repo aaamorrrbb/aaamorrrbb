@@ -14,6 +14,22 @@
             this.lengthOfWings = lengthOfWings;
         }
 
+        public Bird CreateBird(BirdSpecies birdSpecies, double flyingSpeed, double lengthOfWings)
+        {
+            Animal bird = null;
+            switch(birdSpecies)
+            {
+                case BirdSpecies.Dove:
+                    bird = new Dove(flyingSpeed, lengthOfWings);
+                    break;
+                case BirdSpecies.Eagle:
+                    bird = new Eagle(flyingSpeed, lengthOfWings);
+                    break;
+            }
+
+            return (Bird)bird;
+        }
+
         public override string ToString()
         {
             var strOut = base.ToString();

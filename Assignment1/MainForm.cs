@@ -31,7 +31,7 @@ namespace Assignment1
         {
             //input controls
             ClearTextBoxes();
-            lbGender.Items.AddRange(typeof(GenderEnum).GetEnumNames());
+            listGender.Items.AddRange(typeof(GenderEnum).GetEnumNames());
             listCategoryType.Items.AddRange(typeof(CategoryEnum).GetEnumNames());
         }
 
@@ -63,24 +63,24 @@ namespace Assignment1
 
         private bool AreInputsValid()
         {
-            if (double.TryParse(tbAge.Text, out _) &&
 
-               int.TryParse(tbName.Text, out _))
+            bool ok = !string.IsNullOrEmpty(tbName.Text) && !string.IsNullOrEmpty(tbAnimalSpec1.Text) && !string.IsNullOrEmpty(tbAnimalSpec2.Text) && !string.IsNullOrEmpty(tbAge.Text) && listCategoryType.SelectedIndex != -1 && listSpecies.SelectedIndex != -1 && listGender.SelectedIndex != -1;
+            if (ok)
                 return true;
             else
             {
-                MessageBox.Show("Some input fields are invalid!");
+                MessageBox.Show("Not all fields are filled/selected", "Validation Error!");
                 return false;
             }
         }
 
-        private void tbMaxNumOfGuests_Validating(object sender, CancelEventArgs e)
+        private void tbName_Validating(object sender, CancelEventArgs e)
         {
-            if (!int.TryParse(tbName.Text, out _))
-                MessageBox.Show("This should be a number!");
+            if (string.IsNullOrEmpty(tbName.Text))
+                MessageBox.Show("This should be filled!");
         }
 
-        private void tbCostPerPerson_Validating(object sender, CancelEventArgs e)
+        private void tbAge_Validating(object sender, CancelEventArgs e)
         {
             if (!double.TryParse(tbAge.Text, out _))
                 MessageBox.Show("This should be a number!");
@@ -124,31 +124,6 @@ namespace Assignment1
 /*            if (!IsValidName(tbLastName.Text))
                 MessageBox.Show("Last name should not be left empty!");*/
         }
-
-        private void btnCreateList_Click(object sender, EventArgs e)
-        {
-/*            lstAllGuests.Items.Clear();
-            if (AreInputsValid())
-            {
-                int maxNumberOfGuests = int.Parse(tbName.Text);
-                partyManager = new PartyManager(maxNumberOfGuests);
-
-                partyManager.CostPerPerson = double.Parse(tbAge.Text);
-                partyManager.FeePerPerson = double.Parse("02");
-                gbInviteGuest.Enabled = true;
-
-                tbFirstName.Clear();
-                tbLastName.Clear();
-
-                MessageBox.Show(string.Format("Party list with space for {0} guests created!", maxNumberOfGuests, "Success"));
-
-            }
-            else
-            {
-                MessageBox.Show("Invalid input! Try again!");
-            }*/
-        }
-
         private void lstAllGuests_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -203,72 +178,63 @@ namespace Assignment1
 
         private void btnAddAnimal_Click(object sender, EventArgs e)
         {
-            Object species;
-            switch (listSpecies.SelectedItem.ToString())
-            {
-                case "Dog":
-                    rtbAddAnimal.Text = (new Dog(tbSpeciesSpec.Text.ToString())
-                    {
-                        Name = tbName.Text,
-                        Age = Convert.ToInt32(tbAge.Text),
-                        //Gender = (GenderEnum)lbGender.SelectedItem,
-                   //     Category = (CategoryEnum)listCategoryType.SelectedItem,
-                     //   colorOfHair = ColorsEnum.White,
-                        numOfTeeth = Convert.ToInt32(tbAnimalSpec1.Text),
-                        tailLength = Convert.ToDouble(tbAnimalSpec2.Text),
-                    }.ToString());
-                    break;
-                case "Wolf":
-                    species = new Wolf(tbSpeciesSpec.Text)
-                    {
-                        Name = tbName.Text,
-                        Age = int.Parse(tbAge.Text),
-                        Gender = (GenderEnum)lbGender.SelectedItem,
-                        Category = (CategoryEnum)listCategoryType.SelectedItem,
-                        colorOfHair = ColorsEnum.White,
-                        numOfTeeth = int.Parse(tbAnimalSpec1.Text),
-                        tailLength = int.Parse(tbAnimalSpec2.Text),
-                    };
-                    break;
-                case "Dove":
-                    species = new Dove(tbSpeciesSpec.Text)
-                    {
-                        Name = tbName.Text,
-                        Age = int.Parse(tbAge.Text),
-                        Gender = (GenderEnum)lbGender.SelectedItem,
-                        Category = (CategoryEnum)listCategoryType.SelectedItem,
-                        flyingSpeed = int.Parse(tbAnimalSpec1.Text),
-                        lengthOfWings = int.Parse(tbAnimalSpec2.Text),
-                    };
-                    break;
-                case "Eagle":
-                    species = new Eagle(tbSpeciesSpec.Text)
-                    {
-                        Name = tbName.Text,
-                        Age = int.Parse(tbAge.Text),
-                        Gender = (GenderEnum)lbGender.SelectedItem,
-                        Category = (CategoryEnum)listCategoryType.SelectedItem,
-                        flyingSpeed = int.Parse(tbAnimalSpec1.Text),
-                        lengthOfWings = int.Parse(tbAnimalSpec2.Text),
-                    };
-                    break;
-
-            }
-
-            
-/*            animalManager.AddAnimal( new Animal
-
+            if(AreInputsValid())
+                switch (listSpecies.SelectedItem)
                 {
-                    Name = tbName.Text,
-                    Age = int.Parse(tbAge.Text),
-                    Gender = (GenderEnum)lbGender.SelectedItem,
-                    Category = (CategoryEnum)listCategoryType.SelectedItem,
-*//*                    flyingSpeed = int.Parse(tbAnimalSpec1.Text),
-                    lengthOfWings = int.Parse(tbAnimalSpec2.Text),*//*
-                    
-
+                    case "Dog":
+                        rtbAddAnimal.Text = new Dog(tbSpeciesSpec.Text)
+                        {
+                            id = "M001",
+                            Name = tbName.Text,
+                            Age = Convert.ToInt32(tbAge.Text),
+                            Gender = (GenderEnum)Enum.Parse(typeof(GenderEnum), listGender.SelectedItem.ToString()),
+                            Category = (CategoryEnum)Enum.Parse(typeof(CategoryEnum), listCategoryType.SelectedItem.ToString()),
+                         //   colorOfHair = ColorsEnum.White,
+                            numOfTeeth = Convert.ToInt32(tbAnimalSpec1.Text),
+                            tailLength = Convert.ToDouble(tbAnimalSpec2.Text),
+                        }.ToString();
+                        break;
+                    case "Wolf":
+                        rtbAddAnimal.Text = new Wolf(tbSpeciesSpec.Text)
+                        {
+                            Name = tbName.Text,
+                            Age = int.Parse(tbAge.Text),
+                            Gender = (GenderEnum)Enum.Parse(typeof(GenderEnum), listGender.SelectedItem.ToString()),
+                            Category = (CategoryEnum)Enum.Parse(typeof(CategoryEnum), listCategoryType.SelectedItem.ToString()),
+                            colorOfHair = ColorsEnum.White,
+                            numOfTeeth = int.Parse(tbAnimalSpec1.Text),
+                            tailLength = double.Parse(tbAnimalSpec2.Text),
+                        }.ToString();
+                        break;
+                    case "Dove":
+                        rtbAddAnimal.Text = new Dove(tbSpeciesSpec.Text)
+                        {
+                            Name = tbName.Text,
+                            Age = int.Parse(tbAge.Text),
+                            Gender = (GenderEnum)listGender.SelectedItem,
+                            Category = (CategoryEnum)listCategoryType.SelectedItem,
+                            flyingSpeed = int.Parse(tbAnimalSpec1.Text),
+                            lengthOfWings = int.Parse(tbAnimalSpec2.Text),
+                        }.ToString();
+                        break;
+                    case "Eagle":
+                        rtbAddAnimal.Text = new Eagle(tbSpeciesSpec.Text)
+                        {
+                            Name = tbName.Text,
+                            Age = int.Parse(tbAge.Text),
+                            Gender = (GenderEnum)listGender.SelectedItem,
+                            Category = (CategoryEnum)listCategoryType.SelectedItem,
+                            flyingSpeed = int.Parse(tbAnimalSpec1.Text),
+                            lengthOfWings = int.Parse(tbAnimalSpec2.Text),
+                        }.ToString();
+                        break;
                 }
-                );*/
+        }
+
+        private void lbGender_Validating(object sender, CancelEventArgs e)
+        {
+            if(listGender.SelectedIndex == -1)
+                MessageBox.Show("Select a gender type!");
         }
 
     }

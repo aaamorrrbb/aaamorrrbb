@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Assignment1.models.Mammals
+﻿namespace Assignment1.models.Mammals
 {
+    /**
+     * This class is not used as object inheritance used as a solution instead  of calling static methods.
+     */
     internal class MammalFactory
     {
     }

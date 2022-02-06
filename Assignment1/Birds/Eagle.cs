@@ -15,6 +15,10 @@ namespace Assignment1.Birds
             EagleTaxon = eagleTaxon;
         }
 
+        public Eagle(double flyingSpeed, double lengthOfWings) : base(flyingSpeed, lengthOfWings)
+        {
+        }
+
         public override string ToString()
         {
             var strOut = base.ToString();

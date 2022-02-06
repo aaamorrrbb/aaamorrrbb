@@ -44,15 +44,15 @@
             this.tbAnimalSpec2 = new System.Windows.Forms.TextBox();
             this.listCategoryType = new System.Windows.Forms.ListBox();
             this.gbGenderType = new System.Windows.Forms.GroupBox();
-            this.lbGender = new System.Windows.Forms.ListBox();
+            this.listGender = new System.Windows.Forms.ListBox();
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbAge = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rtbAddAnimal = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.rtbAddAnimal = new System.Windows.Forms.RichTextBox();
             this.gbAnimalSpec.SuspendLayout();
             this.gbSpeciesSpec.SuspendLayout();
             this.gbAnimalCatSpec.SuspendLayout();
@@ -216,7 +216,7 @@
             // 
             // gbGenderType
             // 
-            this.gbGenderType.Controls.Add(this.lbGender);
+            this.gbGenderType.Controls.Add(this.listGender);
             this.gbGenderType.Location = new System.Drawing.Point(6, 86);
             this.gbGenderType.Name = "gbGenderType";
             this.gbGenderType.Size = new System.Drawing.Size(174, 93);
@@ -226,11 +226,12 @@
             // 
             // lbGender
             // 
-            this.lbGender.FormattingEnabled = true;
-            this.lbGender.Location = new System.Drawing.Point(21, 19);
-            this.lbGender.Name = "lbGender";
-            this.lbGender.Size = new System.Drawing.Size(146, 56);
-            this.lbGender.TabIndex = 18;
+            this.listGender.FormattingEnabled = true;
+            this.listGender.Location = new System.Drawing.Point(21, 19);
+            this.listGender.Name = "lbGender";
+            this.listGender.Size = new System.Drawing.Size(146, 56);
+            this.listGender.TabIndex = 18;
+            this.listGender.Validating += new System.ComponentModel.CancelEventHandler(this.lbGender_Validating);
             // 
             // tbName
             // 
@@ -238,7 +239,7 @@
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(134, 20);
             this.tbName.TabIndex = 1;
-            this.tbName.Validating += new System.ComponentModel.CancelEventHandler(this.tbMaxNumOfGuests_Validating);
+            this.tbName.Validating += new System.ComponentModel.CancelEventHandler(this.tbName_Validating);
             // 
             // tbAge
             // 
@@ -246,7 +247,7 @@
             this.tbAge.Name = "tbAge";
             this.tbAge.Size = new System.Drawing.Size(35, 20);
             this.tbAge.TabIndex = 2;
-            this.tbAge.Validating += new System.ComponentModel.CancelEventHandler(this.tbCostPerPerson_Validating);
+            this.tbAge.Validating += new System.ComponentModel.CancelEventHandler(this.tbAge_Validating);
             // 
             // label6
             // 
@@ -281,6 +282,16 @@
             this.groupBox2.Text = "List of registered animals";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // rtbAddAnimal
+            // 
+            this.rtbAddAnimal.BackColor = System.Drawing.SystemColors.Control;
+            this.rtbAddAnimal.Enabled = false;
+            this.rtbAddAnimal.Location = new System.Drawing.Point(8, 37);
+            this.rtbAddAnimal.Name = "rtbAddAnimal";
+            this.rtbAddAnimal.Size = new System.Drawing.Size(284, 173);
+            this.rtbAddAnimal.TabIndex = 24;
+            this.rtbAddAnimal.Text = "";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -298,16 +309,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(500, 173);
             this.listBox1.TabIndex = 22;
-            // 
-            // rtbAddAnimal
-            // 
-            this.rtbAddAnimal.BackColor = System.Drawing.SystemColors.Control;
-            this.rtbAddAnimal.Enabled = false;
-            this.rtbAddAnimal.Location = new System.Drawing.Point(8, 37);
-            this.rtbAddAnimal.Name = "rtbAddAnimal";
-            this.rtbAddAnimal.Size = new System.Drawing.Size(284, 173);
-            this.rtbAddAnimal.TabIndex = 24;
-            this.rtbAddAnimal.Text = "";
             // 
             // MainForm
             // 
@@ -341,7 +342,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox gbGenderType;
-        private System.Windows.Forms.ListBox lbGender;
+        private System.Windows.Forms.ListBox listGender;
         private System.Windows.Forms.Button btnAddAnimal;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label10;

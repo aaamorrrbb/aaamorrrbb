@@ -15,6 +15,10 @@ namespace Assignment1.Birds
             DoveTaxon = doveTaxon;
         }
 
+        public Dove(double flyingSpeed, double lengthOfWings) : base(flyingSpeed, lengthOfWings)
+        {
+        }
+
         public override string ToString()
         {
             var strOut = base.ToString();

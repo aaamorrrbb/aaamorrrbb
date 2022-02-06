@@ -1,6 +1,6 @@
 ﻿namespace Assignment1.Birds
 {
-    internal enum BirdSpecies 
+    public enum BirdSpecies 
     {
         Dove,
         Eagle,
